@@ -13,10 +13,10 @@ class LoginPage extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Wrap(
           runSpacing: 30,
-          children: const [
-            AppLogo(),
+          children: [
+            const AppLogo(),
             LoginForm(),
-            Center(child: LoginBottomFunctions()),
+            const Center(child: LoginBottomFunctions()),
           ],
         ),
       ),

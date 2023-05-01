@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sevent/widgets/auth/pages/login.dart';
 
 void main() {
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Sevent',
       theme: ThemeData(
         useMaterial3: true,
+        // textTheme: GoogleFonts.ubuntuTextTheme(),
         colorScheme: const ColorScheme(
           brightness: Brightness.dark,
           primary: Colors.white,
@@ -25,10 +27,9 @@ class MyApp extends StatelessWidget {
           onError: Colors.pink,
           background: Colors.white12,
           onBackground: Colors.white24,
-          surface: Colors.white24,
-          onSurface: Colors.white,
+          surface: Colors.white,
+          onSurface: Colors.white24,
         ),
-        // primaryColor: Colors.white,
       ),
       home: const LoginPage(),
     );

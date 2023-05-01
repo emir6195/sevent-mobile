@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class TextStyles {
@@ -5,6 +6,7 @@ class TextStyles {
     return const TextStyle(
       fontSize: 32,
       fontWeight: FontWeight.w600,
+      color: (Colors.white),
     );
   }
 }

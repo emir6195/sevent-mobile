@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:sevent/styles/buttons.dart';
-import 'package:sevent/styles/text.dart';
+import 'package:sevent/styles/inputs.dart';
+import 'package:sevent/styles/texts.dart';
+import 'package:sevent/widgets/auth/controllers/login.controller.dart';
 
 class LoginForm extends StatelessWidget {
-  const LoginForm({super.key});
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  LoginController loginController = LoginController();
 
   @override
   Widget build(BuildContext context) {
@@ -20,20 +24,18 @@ class LoginForm extends StatelessWidget {
                   style: TextStyles().headingText(),
                 ),
               ),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Kullanıcı Adı',
-                  border: ButtonStyles().circularInputStyle(),
-                ),
+              InputStyles().seventFormField(
+                "Kullanıcı Adı",
+                usernameController,
               ),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Şifre',
-                  border: ButtonStyles().circularInputStyle(),
-                ),
+              InputStyles().seventFormField(
+                "Şifre",
+                passwordController,
+                true,
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () => loginController.login(
+                    context, usernameController.text, passwordController.text),
                 style: ButtonStyles().mainButtonStyle(context),
                 child: const Text("Giriş"),
               )
